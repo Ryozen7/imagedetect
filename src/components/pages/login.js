@@ -4,12 +4,24 @@ import Input from '../common/input';
 import Button from '../common/button';
 import Validate from '../common/validator';
 import Spinner from '../common/spinner';
+import { fetchAPI } from '../../config/api';
+import { pathname } from '../constants/pathname.constants';
+import { useNavigate } from 'react-router-dom';
+import getToken from '../../config/get-token';
+import validateToken from '../../config/validate-token';
+const CryptoJS = require("crypto-js")
 
 export default function Login() {
+    const navigate = useNavigate();
     const [form, setForm] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false)
+    const [isSubmit, setIsSubmit] = useState(false);
     const [error, setError] = useState({});
+    const user = getToken()
 
+    useEffect(()=> {
+        validateToken(null, user, navigate)
+    }, [ navigate ])
+    
     useEffect(()=> {
         let obj = {...error}
         if(form.email?.length > 0) {
@@ -29,7 +41,7 @@ export default function Login() {
         setForm(form =>({...form, [name]: value}))
     }
 
-    const onSubmit = (e, data) => {
+    const onSubmit = async (e, data) => {
         e.preventDefault();
         
         const validator = Validate(loginForm, data) 
@@ -40,6 +52,24 @@ export default function Login() {
         }
 
         setIsSubmit(true)
+        try {
+            const options = {
+                method: 'POST',
+                body: JSON.stringify(data)
+            }
+            const response =await fetchAPI(`/api${pathname.login}`, options)
+            setIsSubmit(false)
+            if( response.error) setError(response);
+            if(response.success) {
+                const user = CryptoJS.AES.encrypt(JSON.stringify(response.user), 
+                'secret key user123').toString();
+                localStorage.setItem('token', user);
+                return navigate(`/p${response.user._id}r${Math.round(Math.random()*100)}f`);
+            }
+        } catch(e) {
+            setIsSubmit(false)
+            console.log(e)
+        }
     }
 
     return (
