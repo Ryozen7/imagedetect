@@ -4,7 +4,6 @@ import Input from '../common/input';
 import Button from '../common/button';
 import Validate from '../common/validator';
 import Spinner from '../common/spinner';
-import { parseToken } from '../../config/validate-token';
 import { pathname } from '../constants/pathname.constants';
 import { useNavigate } from 'react-router-dom';
 import getToken from '../../config/get-token';
@@ -21,7 +20,8 @@ export default function Signup() {
     useEffect(()=> {
         if(token) {
             navigate(`/`)      
-        }  
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ ])
 
     useEffect(()=> {
@@ -44,6 +44,7 @@ export default function Signup() {
             let { password, ...newObj3} = obj;
             setError(newObj3)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [form])
     
     const onChangeValue = (e) => {

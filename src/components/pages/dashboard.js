@@ -1,8 +1,5 @@
 import React , { useEffect }from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import getToken from '../../config/get-token';
-import validateToken from '../../config/validate-token';
-import { pathname } from '../constants/pathname.constants';
 import NavComponent from '../global/nav-component';
 
 export default function Dashboard() {
@@ -15,7 +12,8 @@ export default function Dashboard() {
         if (location.state?._id === userId) return;
         if(userId !== location.state?._id) {
             return navigate(`/p7r18f${location.state._id}`, {state: location.state})
-        }    
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps    
     }, [ ])
 
     return (

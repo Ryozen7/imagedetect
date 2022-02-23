@@ -1,5 +1,4 @@
 import React from 'react';
-import NavComponent from "./nav-component"
 import ContentPages from "./content-pages"
 import Footer from "./footer"
 

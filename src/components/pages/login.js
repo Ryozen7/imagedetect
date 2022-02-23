@@ -22,6 +22,7 @@ export default function Login() {
         if(token) {
             navigate(`/`)      
         }  
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ ])
  
 
@@ -37,6 +38,7 @@ export default function Login() {
             let { password, ...newObj2} = obj;
             setError(newObj2)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [form])
 
     const onChangeValue = (e) => {

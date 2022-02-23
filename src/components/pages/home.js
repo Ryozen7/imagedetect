@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Spinner from '../common/spinner';
 import { pathname } from '../constants/pathname.constants';
 import getToken from '../../config/get-token';
-import { parseToken } from '../../config/validate-token';
 import { fetchAPI } from '../../utils/api';
 
 export default function Home() {
@@ -35,6 +34,7 @@ export default function Home() {
             localStorage.clear();
             navigate(`${pathname.login}`)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ ])    
 
     return (
