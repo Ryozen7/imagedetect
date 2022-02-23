@@ -3,14 +3,15 @@ import MainNav from '../common/main-nav';
 import Button from '../common/button';
 import { pathname } from '../constants/pathname.constants';
 import getToken from '../../config/get-token';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function NavComponent() {
     const loc = useLocation();
+    const navigate = useNavigate();
     const user = getToken();
     const handleClick = (e, path) => {
         e.preventDefault()
-        return window.location.href = path
+        navigate(`${path}`)
     }
 
     return (
