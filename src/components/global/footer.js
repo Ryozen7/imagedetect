@@ -4,7 +4,7 @@ import React from 'react';
 export default function Footer() {
 
     return (
-        <div className='bg-gray-400 h-[15vh] w-full flex flex-col justify-center items-center'>
+        <div className='bg-gray-100 h-[15vh] w-full flex flex-col justify-end items-center pb-4'>
         <span className='font-bold text-sm'>
         {`All rights reserved...`}
         </span>

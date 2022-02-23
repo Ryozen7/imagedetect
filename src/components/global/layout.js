@@ -7,9 +7,7 @@ export default function Layout() {
 
     return (
         <div className='h-screen w-screen bg-white'>
-            <NavComponent />
-
-            <div className='w-full h-[70vh]'>
+            <div className='w-full h-[85vh] bg-gray-100'>
             <ContentPages />
             </div>
             
