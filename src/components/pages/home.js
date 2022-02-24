@@ -8,7 +8,7 @@ import { fetchAPI } from '../../utils/api';
 export default function Home() {
     const navigate = useNavigate();
     const token = getToken();
-
+    console.log("went here home")
     useEffect(()=> {
         if(token) {
             const fetchUser = async() => {
@@ -34,7 +34,6 @@ export default function Home() {
             localStorage.clear();
             navigate(`${pathname.login}`)
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ ])    
 
     return (

@@ -21,7 +21,7 @@ export default function Signup() {
         if(token) {
             navigate(`/`)      
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
     }, [ ])
 
     useEffect(()=> {
@@ -44,7 +44,6 @@ export default function Signup() {
             let { password, ...newObj3} = obj;
             setError(newObj3)
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [form])
     
     const onChangeValue = (e) => {
