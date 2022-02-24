@@ -34,6 +34,7 @@ export default function Home() {
             localStorage.clear();
             navigate(`${pathname.login}`)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ ])    
 
     return (
