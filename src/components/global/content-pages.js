@@ -15,7 +15,7 @@ export default function ContentPages() {
                 <Route path={"signup"}  element={<Signup />} />
                 <Route path={"login"}  element={<Login />} />
                 <Route path={"/"}  element={<Home />} />
-                <Route path={":userId"} element={<Dashboard />} />
+                <Route path={"/:userId"} element={<Dashboard />} />
                 <Route path={"*"}  element={<NotFound />} />
             </Routes>
             </BrowserRouter>
