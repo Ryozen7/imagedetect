@@ -13,7 +13,6 @@ export default function Dashboard() {
         if(userId !== location.state?._id) {
             return navigate(`/p7r18f${location.state._id}`, {state: location.state})
         }
-         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ ])
 
     return (
