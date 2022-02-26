@@ -1,5 +1,6 @@
 import React , { useEffect }from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import SideBar from '../common/side-bar';
 import NavComponent from '../global/nav-component';
 
 export default function Dashboard() {
@@ -16,9 +17,15 @@ export default function Dashboard() {
     }, [ ])
 
     return (
-        <>
+        <div className='w-full h-[85vh] flex flex-col'>
         <NavComponent />
-        This is a dashboard content.
-        </>
+        <div className='w-full h-auto flex flex-row'>
+            <div className='w-1/4 hidden md:flex flex-row justify-center items-center'>
+                <SideBar />
+            </div>
+            <div className='w-full md:w-3/4 h-full'>
+            </div>
+        </div>
+        </div>
     )
 }

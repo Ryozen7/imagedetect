@@ -5,7 +5,9 @@ const pathname = {
     user:'/user',
     users:'/users',
     logout:'/logout',
-    detect:'/detect'
+    detect:'/detect',
+    history:'/history',
+    profile:'/profile'
 }
 
 export { 
