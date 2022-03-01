@@ -20,6 +20,10 @@ export default function MainNav() {
         try {
             const response = await fetchAPI(`/api${pathname.logout}/${state._id}`, options)
             setIsLogout((false))
+            if(response.error) {
+                localStorage.clear();
+                navigate(`${pathname.login}`)
+            }
             if(response.success) {
                 localStorage.clear()
                 navigate(`${pathname.login}`)

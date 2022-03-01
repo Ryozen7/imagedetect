@@ -15,7 +15,6 @@ export default function Home() {
                 try {
                     const response = await fetchAPI(`/api/me`)
                     if(response.error) {
-                        alert(`${response.error}`)
                         localStorage.clear();
                         navigate(`${pathname.login}`)
                     }
