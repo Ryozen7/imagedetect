@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import getToken from '../../config/get-token';
 import SideBar from '../common/side-bar';
 import NavComponent from '../global/nav-component';
+import FaceDetect from '../common/face-detect';
 
 export default function Dashboard() {
     const navigate = useNavigate();
@@ -22,10 +23,11 @@ export default function Dashboard() {
         <div className='w-full h-[85vh] flex flex-col'>
         <NavComponent />
         <div className='w-full h-[75vh] flex sm:flex-row flex-col'>
-            <div className='w-full sm:w-1/4 h-1/3 overflow-y-auto sm:h-full'>
+            <div className='w-full bg-gray-200 sm:w-1/4 h-1/3 overflow-y-auto sm:h-full'>
                 <SideBar />
             </div>
-            <div className='w-full sm:w-3/4 sm:h-2/3 h-full'>
+            <div className='w-full sm:w-3/4  h-1/3 sm:h-full'>
+                <FaceDetect />
             </div>
         </div>
         </div>
