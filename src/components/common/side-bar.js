@@ -26,19 +26,19 @@ export default function SideBar() {
     }, [isCopied])
 
     return (
-        <div className='w-full h-full flex flex-col justify-start items-start sm:bg-gray-200'>
+        <div className='w-full h-full flex flex-col justify-start items-start'>
             <span className='text-md font-medium p-4 relative'>{`Here is a sample image link`}</span>
             { isCopied && (
-                     <div className='text-sm absolute sm:text-md text-primary font-medium mt-10 bg-gray-300 mx-4 text-center rounded-md p-1 px-2'>
+                     <div className='text-sm absolute sm:text-md text-primary font-medium mt-10 mx-4 text-center rounded-md p-1 px-2'>
                          {`Link is copied to the clipboard!`}
                     </div>
             )}
-            <div className='w-full text-sm font-medium pl-4 h-full'>
+            <div className='w-full text-sm font-medium pl-4 h-full max-h-[500px] border-2 bg-gray-200'>
                 { links.map((link, i) => {
                     return (
                         <div key={i} className='w-full flex flex-row mt-4 relative justify-between items-between'>
                             
-                            <div className='opacity-0 hover:opacity-100 w-[180px] overflow-x-auto mb-4 text-xs bg-gray-100 font-normal absolute z-10'>
+                            <div className='opacity-0 hover:opacity-100 w-[180px] overflowX mb-4 text-xs font-normal absolute z-10'>
                                 <span>
                                 {link}
                                 </span>

@@ -85,7 +85,7 @@ export default function FaceDetect() {
         } 
     }
     return (
-        <div className="h-[75vh] flex p-5 flex-col justify-start items-center">
+        <div className="h-full flex p-5 flex-col justify-start items-center">
  
             <div className="w-full flex justify-center mb-5">
             <Input

@@ -49,6 +49,7 @@ export default function MainNav() {
         }
         navigate(`${userIDpath}${path}`, {state: state})
     }
+
     return (
         <div className='w-full flex justify-between items center h-full bg-gray-light'>
             <Button 
@@ -67,7 +68,7 @@ export default function MainNav() {
                 { nav.map( button => (
                     <Button 
                     key={button.name}
-                    addClassName={`mr-5 text-md font-medium text-black w-1/6 max-w-[120px] bg-primary p-1 rounded-md flex justify-center items-center ${pathURL.includes(pathname.history) && 'bg-secondary'}`} 
+                    addClassName={`mr-5 text-md font-medium text-black w-1/6 max-w-[120px] p-1 rounded-md flex justify-center items-center ${pathURL.includes(button.path) ? 'bg-secondary hover:none': 'bg-primary hover:opacity-90 hover:text-white '}`} 
                     handleClick={e=> onhandleClick(e, button.path)}
                     >
                         {button.name === 'Logout'? 

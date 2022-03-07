@@ -1,17 +1,15 @@
 
-import { MdClose, MdChevronRight } from "react-icons/md";
+import { MdClose } from "react-icons/md";
 import Button from "./button";
 
 const MobileNavMenu = ({ buttons, face, closeSelf, onhandleClick }) => {
 
 
   return (
-    <div className="w-screen h-sreen fixed top-0 left-0 overflow-y-scroll bg-white z-50 pb-6">
-      <div className="container h-screen flex flex-col justify-between">
+    <div className="w-screen h-sreen fixed top-0 left-0 overflowY bg-white z-50 pb-6">
+      <div className="h-screen flex flex-col justify-between w-full">
         {/* Top section */}
-        <div className="flex flex-row justify-between px-2 py-2 items-center">
-          {/* Company logo */}
-          {/* <Image media={navbar.logo} className="h-8 w-auto object-contain" /> */}
+        <div className="flex flex-row justify-between w-full px-2 mt-3 py-2 items-center">
           <Button 
                 addClassName='w-[80px] flex justify-center items-center'
                 handleClick={e=> onhandleClick(e, '')}
@@ -30,11 +28,11 @@ const MobileNavMenu = ({ buttons, face, closeSelf, onhandleClick }) => {
           </button>
         </div>
         {/* Bottom section */}
-        <div className="flex flex-col w-full h-full flex items-center">
+        <div className="flex flex-col w-full h-full flex items-center mt-5">
             { buttons.map( button => (
                     <Button 
                     key={button.name}
-                    addClassName={`w-2/3 p-4 m-2 bg-primary rounded-lg hover:opacity-90 hover:text-white text-md font-medium`} 
+                    addClassName={`w-2/3 p-4 m-2 bg-primary rounded-lg hover:opacity-90 hover:text-white text-xl font-medium`} 
                     handleClick={e=> onhandleClick(e, button.path)}
                     >
                         { button.name }
