@@ -26,7 +26,7 @@ export default function History() {
                                 {state.imageHistory?.length > 0 && state.imageHistory.map((image, id) => {
                                     return (
                                         <div key={id} className='w-full border-b text-md border-gray-500 flex flex-row min-h-[40px] items-center'>
-                                            <div className='px-2 w-2/3 text-left border-r border-gray-500 min-h-[40px]'> {`${image.url}`}</div>
+                                            <div className='px-2 w-2/3 text-left border-r border-gray-500 min-h-[40px] truncate'> {`${image.url}`}</div>
                                             <span className='w-1/3 text-center'> {`${moment.utc(image.createdAt).format('LLLL')}`}</span>
                                         </div>
                                     )
